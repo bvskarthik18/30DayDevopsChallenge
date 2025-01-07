@@ -13,9 +13,6 @@ class WeatherDashboard:
         self.api_key = os.getenv('OPENWEATHER_API_KEY')
         self.bucket_name = os.getenv('AWS_BUCKET_NAME')
         self.s3_client = boto3.client('s3')
-        print(f"API key: {self.api_key}")
-        print(f"Bucket name: {self.bucket_name}")
-
 
     def create_bucket_if_not_exists(self):
         """Create S3 bucket if it doesn't exist"""
@@ -76,7 +73,11 @@ def main():
     # Create bucket if needed
     dashboard.create_bucket_if_not_exists()
     
-    cities = ["London", "Sydney", "Tokyo", "Paris", "Hyderabad"]
+    # cities = ["Philadelphia", "Seattle", "New York"]
+    
+    with open("Day01-WeatherDashboard\data\cities.json", "r") as file:
+        data = json.load(file)
+        cities = data["cities"]
     
     for city in cities:
         print(f"\nFetching weather for {city}...")
