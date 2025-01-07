@@ -2,6 +2,7 @@
 ---
 
 # 🌤️ AWS Weather Dashboard Application
+![alt text](image.png)
 
 This application fetches **weather data** from the **OpenWeather** API and displays it on a dashboard. It uses **AWS** services such as **S3** for data storage and **AWS CLI** for managing AWS resources. The app is built with **Python** and integrates with **AWS Cloud** for deployment. 
 
