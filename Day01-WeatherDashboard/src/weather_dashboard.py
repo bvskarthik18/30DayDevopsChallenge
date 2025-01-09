@@ -2,6 +2,7 @@ import os
 import json
 import boto3
 import requests
+from botocore.exceptions import ClientError
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -75,7 +76,7 @@ def main():
     
     # cities = ["Philadelphia", "Seattle", "New York"]
     
-    with open("Day01-WeatherDashboard\data\cities.json", "r") as file:
+    with open("data\cities.json", "r") as file:
         data = json.load(file)
         cities = data["cities"]
     
